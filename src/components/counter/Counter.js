@@ -39,10 +39,12 @@ const Counter = () => {
   return (
     <Box sx={{
         backgroundColor:"#222222",
-        width:360,
+        widthMin:350,
+        maxWidth:350,
         p:2,
         borderRadius:8,
         boxShadow:'5px 5px #444444',
+        justifyContent :'center'
         }}>
         <Grid container spacing={1}
             
