@@ -11,7 +11,9 @@ import { useState } from 'react';
 
 import { Box, Button, Grid, Input, Typography } from '@mui/material';
 
-
+//Cała ta zabawa kosztuje mnie całą noc by to w stresie rozkminić... 
+//nimo tego że z zasady jest to proste to robię głupie błedy i zaczynam z punktu zerowego...
+//Różne wersje dependencji zdecydowanie w tym nie pomagają...
 
 const Counter = () => {
 
