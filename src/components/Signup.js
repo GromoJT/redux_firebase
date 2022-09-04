@@ -26,7 +26,9 @@ export default function Signup() {
         return setError('Passwords do not match')
       }
       await createUser(emailRef,passwordRef)
-      navigate('/')
+      setEmailRef(null)
+      setPasswordRef(null)
+      navigate('/login')
     }catch (err){
       
       setError(err.message)
