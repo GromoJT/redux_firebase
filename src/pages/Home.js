@@ -1,6 +1,8 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom';
 import {UserAuth} from '../contexs/AuthContext'
+import HomeAlert from '../components/hompageComponentAlert';
+import { Container } from 'react-bootstrap';
 function Home() {
   
   
@@ -14,7 +16,11 @@ function Home() {
 
 
   return (
-    <div> This is Home page! {user && user.email}</div>
+    <Container className='mt-2'>
+      <div className='mb-2'> This is Home page! {user && user.email}</div>
+      <HomeAlert />
+    </Container>
+    
   )
 }
 
