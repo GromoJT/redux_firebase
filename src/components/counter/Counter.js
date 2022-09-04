@@ -39,8 +39,7 @@ const Counter = () => {
   return (
     <Box sx={{
         backgroundColor:"#222222",
-        widthMin:350,
-        maxWidth:350,
+        width:"100vh",
         p:2,
         borderRadius:8,
         boxShadow:'5px 5px #444444',
