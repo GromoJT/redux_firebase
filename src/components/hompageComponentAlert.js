@@ -20,7 +20,7 @@ function HomeAlert() {
                     <hr/>
                     <p className='mb-0'>
                         Ale z odrobiną nadziej może czegoś się nauczę do trzydziestki...<br/>
-                        Choć przyjaciel mówi bym sięz aż tak nie martwił...
+                        Choć przyjaciel mówi bym się aż tak nie martwił...
                     </p> 
                 
                 
