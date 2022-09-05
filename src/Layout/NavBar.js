@@ -2,8 +2,9 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {UserAuth} from '../contexs/AuthContext'
+import {getSec} from '../functions/clock'
 
 const NavBar = () =>{
 
@@ -30,7 +31,12 @@ const NavBar = () =>{
         
         <Navbar bg="dark" variant='dark' expand="lg">
         <Container fluid >
-        <Navbar.Brand href="/" >TJ</Navbar.Brand>
+        <Navbar.Brand href="/" >
+          {
+            getSec()
+          }
+          
+          </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           
@@ -43,13 +49,19 @@ const NavBar = () =>{
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/counter">Redux counter</Nav.Link>
             <Nav.Link href="/todo">todo</Nav.Link>
+            
             </Nav>
             }
             
+          
             
           
           <Navbar.Collapse className="justify-content-end">
             
+          
+
+
+
           <Nav>
 
           <Navbar.Text>
@@ -64,6 +76,7 @@ const NavBar = () =>{
               
           </Nav>
         </Navbar.Collapse>
+        
         </Navbar.Collapse>
           </Container>
         </Navbar>

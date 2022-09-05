@@ -1,7 +1,9 @@
-import React, { useState } from "react"
-import { Form, Button, Card, Alert } from "react-bootstrap"
-import { UserAuth } from '../contexs/AuthContext'
-import { useNavigate } from "react-router-dom"
+import React, { useState } from "react";
+import { Form, Button, Card, Alert} from "react-bootstrap";
+import { UserAuth } from '../contexs/AuthContext';
+import { useNavigate } from "react-router-dom";
+import {GoogleButton} from 'react-google-button';
+
 
 export default function Signup() {
 
@@ -11,7 +13,19 @@ export default function Signup() {
   const [error,setError]= useState('')
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
-  const {createUser} = UserAuth()
+  const {createUser,googleSignIn} = UserAuth()
+
+
+
+  const handleGoogleSignIn = async (auth) => {
+    try{
+      await googleSignIn(auth);
+    }catch (error){
+      console.log(error);
+      console.log('burak');
+    }
+  };
+
 
   const handleSubmit = async (e) =>{
     e.preventDefault();
@@ -41,33 +55,6 @@ export default function Signup() {
   }
 
 
-  /*
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const passwordConfRef = useRef();
-
-  const {signup} = useAuth()
-  const [error,setError] = useState('')
-  const [loading, setLoading] = useState(false)
-
-  async function handleSubmit(e){
-    e.preventDefault()
-
-
-    if(passwordRef.current.value === passwordConfRef.current.value){
-      return setError('Passwords do not match')
-    }
-      
-      try{
-        setError('');
-        setLoading(true);
-        await signup(emailRef.current.value,passwordRef.current.value);
-      }catch{
-        setError('Faild to create an account')
-      };
-      setLoading(false)
-  }
- */
 
   return (
     <>
@@ -91,6 +78,10 @@ export default function Signup() {
               <Form.Control type="password" onChange={(e)=>setPasswordConfRef(e.target.value)} required />
             </Form.Group>
             <Button disabled={!loading} className="w-100 mt-4" type="submit">Sign Up</Button>
+            <Form.Group className=" mt-2 d-flex justify-content-center">
+              <GoogleButton onClick={handleGoogleSignIn}/>
+            </Form.Group>
+            
           </Form>
         </Card.Body>
       </Card>

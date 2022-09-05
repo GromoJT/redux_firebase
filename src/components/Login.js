@@ -2,6 +2,7 @@ import React, {useState} from "react"
 import { Form, Button, Card, Alert, } from "react-bootstrap"
 import {UserAuth} from '../contexs/AuthContext'
 import { Link,useNavigate} from "react-router-dom"
+import GoogleButton from "react-google-button"
 
 
 
@@ -12,7 +13,7 @@ const Login = () => {
   const [error,setError]= useState('')
   const navigate = useNavigate()
   const {signIn} = UserAuth();
-
+  const {createUser,googleSignIn} = UserAuth()
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('')
@@ -25,6 +26,14 @@ const Login = () => {
     }
   }
 
+  const handleGoogleSignIn = async (auth) => {
+    try{
+      await googleSignIn(auth);
+    }catch (error){
+      console.log(error);
+      console.log('burak');
+    }
+  };
   
   
   return (
@@ -45,6 +54,10 @@ const Login = () => {
             </Form.Group>
 
             <Button className="w-100 mt-4" type="submit">Login</Button>
+
+            <Form.Group className=" mt-2 d-flex justify-content-center">
+            <GoogleButton onClick={handleGoogleSignIn}/>
+            </Form.Group>
           </Form>
         </Card.Body>
       </Card>
