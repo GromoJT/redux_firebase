@@ -1,6 +1,13 @@
+html{
+    background-image: url('./media/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .App{
     margin: 2rem;
     display: "flex";
     justify-content: center;
     align-items: center;
+    
 }

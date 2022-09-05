@@ -10,11 +10,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-    
+      <section className='main-container'>
+
+      
       <Provider store={store}>
         <App />
       </Provider>
-    
+      </section>
   
 );
 

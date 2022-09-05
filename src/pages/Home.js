@@ -16,7 +16,7 @@ function Home() {
 
 
   return (
-    <Container className='mt-2'>
+    <Container className='mt-2' >
       <div className='mb-2'> This is Home page! {user && user.email}</div>
       <HomeAlert />
     </Container>

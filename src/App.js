@@ -8,19 +8,24 @@ import ErrorPage from './pages/ErrorPage';
 import LoginPage from './pages/LoginPage';
 import SigneUpPage from './pages/SigneUpPage';
 import { AuthContextProvider } from './contexs/AuthContext';
+import { useEffect, useState } from 'react';
 
 function App() {
-  return (
-    
-        
+
+  
+
+  return (      
       <BrowserRouter>
           <AuthContextProvider>
+            <div id='rcon'>
+
+            
           <Navbar/>
           <Routes>
             
               <Route path="/" element={<Home/>}/>
               <Route path="/counter" element={<CounterPage/>}/>
-              <Route path="/about" element={<About/>}/>
+              <Route path="/todo" element={<About />}/>
               <Route path="/login" element={<LoginPage/>}/>
               <Route path="/signup" element={
                 
@@ -30,6 +35,7 @@ function App() {
               <Route path="*" element={<ErrorPage/>}/>
             
           </Routes>
+            </div>
           </AuthContextProvider>
           
       </BrowserRouter>
