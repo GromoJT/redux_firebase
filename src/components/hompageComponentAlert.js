@@ -14,7 +14,8 @@ function HomeAlert() {
                 "Doświadczenie jest klęską i trzeba wszystko stracić, żeby dowiedzieć się odrobinę. Doświadczenie jest niezbędne do nauczenia się wszystkiego, czego dokonać można swoim instrumentem, ale zwłaszcza do unikania tego, na co nie należy się porywać. Doświadczenie rodzi prawa, nigdy znajomość praw nie poprzedza doświadczenia."
                 </p>
                 <p className='font-itali'>
-                    - Randomowy cytat z google...
+                    - Randomowy cytat z bing
+                    
                 </p>
                 
                     <hr/>
