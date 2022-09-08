@@ -9,6 +9,7 @@ import LoginPage from './pages/LoginPage';
 import SigneUpPage from './pages/SigneUpPage';
 import { AuthContextProvider } from './contexs/AuthContext';
 import { useEffect, useState } from 'react';
+import Storage from './pages/storage';
 
 function App() {
 
@@ -22,10 +23,11 @@ function App() {
             
           <Navbar/>
           <Routes>
-            
+          
               <Route path="/" element={<Home/>}/>
               <Route path="/counter" element={<CounterPage/>}/>
               <Route path="/todo" element={<About />}/>
+              <Route path="/storage" element={<Storage/>}/>
               <Route path="/login" element={<LoginPage/>}/>
               <Route path="/signup" element={
                 
